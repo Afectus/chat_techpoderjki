@@ -10,6 +10,7 @@
 # команды определяются по наличию вначале символов #< и до ближайшего пробела
 import re
 
+
 def comandProcessing(user_text):
     pattern = r'\#\<[\w]+'
     exit_command = tuple()

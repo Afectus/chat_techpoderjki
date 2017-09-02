@@ -2,8 +2,9 @@ import sqlite3
 conn = sqlite3.connect("database.sqlite")
 cursor = conn.cursor() #получаем объект указателя соеденения
 
-sql = "SELECT * FROM users" #формируем запрос
-cursor.execute(sql) # передаема запрос к бд
+sql = "SELECT * FROM users where login =login" #формируем запрос
+n = [("1")]
+cursor.execute(sql,n) # передаема запрос к бд
 a = cursor.fetchall()  #Получаем результат запроса в виде списка, в котором кортеж
 print(a)
 

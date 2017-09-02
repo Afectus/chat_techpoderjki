@@ -21,4 +21,8 @@ def comandProcessing(user_text):
     else:
         exit_command = ('text', user_text)
     return exit_command
-print(comandProcessing("#<user текст который будет передаваться"))
+
+
+if __name__ == '__main__':
+
+    print(comandProcessing("#<user текст который будет передаваться"))

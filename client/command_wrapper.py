@@ -26,3 +26,5 @@ def comandProcessing(user_text):
 if __name__ == '__main__':
 
     print(comandProcessing("#<user текст который будет передаваться"))
+
+

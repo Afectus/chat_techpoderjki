@@ -1,17 +1,14 @@
 import sqlite3
-conn = sqlite3.connect("database.sqlite")
+conn = sqlite3.connect("database.sqlite") #Подключаемся к  бд
 cursor = conn.cursor() #получаем объект указателя соеденения
 
-sql = "SELECT * FROM users where login =login" #формируем запрос
-n = [("1")]
-cursor.execute(sql,n) # передаема запрос к бд
-a = cursor.fetchall()  #Получаем результат запроса в виде списка, в котором кортеж
-print(a)
+login = input("Введите логин")
+passs = input("Введите пароль")
 
-
-# Создание таблицы
-#cursor.execute("""CREATE TABLE albums
-#                  (title text, artist text, release_date text,
-#                   publisher text, media_type text)
-#               """)
-
+sql = f"SELECT * FROM users where login  = '{login}' and pass = '{passs}' " #формируем запрос c использованием F строк
+cursor.execute(sql) # передаема запрос к бд
+sqel_request = cursor.fetchall()  #Получаем результат запроса в виде списка, в котором кортеж
+if len(sqel_request) > 0:
+    print("Вы успешно авторизовались под логином",login)
+else:
+    print("Вы ввели что-то не так")
